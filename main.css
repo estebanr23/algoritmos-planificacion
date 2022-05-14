@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contenedor {
+    width: 1200px;
+    margin: 0 auto;
+}
+.centrar-texto {
+    text-align: center;
+}
+h1 {
+    margin: 10px 0;
+}
+form {
+    width: 600px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+form > .campo {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+form > .campo label {
+    flex-basis: 150px;
+    text-align: start;
+}
+input[type=button] {
+    margin: 20px 0;
+}
+ul {
+    margin: 20px 0;
+}
+ul > li {
+    list-style: none;
+}
+
+/* Diagrama */ 
+.diagrama {
+    margin: 20px 0;
+    padding: 10px;
+}
+table {
+    /*width: 800px;*/
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+}
