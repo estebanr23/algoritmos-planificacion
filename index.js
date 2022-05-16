@@ -41,7 +41,7 @@ function crearNodo() {
 }
 
 // Prueba de Grilla
-var t = 19;
+var t;
 var diagrama = document.getElementById('diagrama');
 var table = document.createElement('table');
 diagrama.appendChild(table);
@@ -63,6 +63,8 @@ var secuencia = [
     'P4', 'P4', 'P4',
     'P4'
 ];
+
+t = secuencia.length;
 
 //function crearCabecera() {
     let row_1 = document.createElement('tr');
