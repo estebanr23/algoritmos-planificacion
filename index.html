@@ -27,6 +27,30 @@
             </ul>
         </div>
     </nav>
+
+    <section class="contenedor centrar-texto">
+        <h1>Algoritmo de Planificación FCFS</h1>
+        <form action="#" name="form-procesos">
+            <div class="campo">
+                <label for="nombre">Proceso</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="campo">
+                <label for="llegada">Tiempo de llegada</label>
+                <input type="number" id="llegada" min="0" required>
+            </div>
+            <div class="campo">
+                <label for="ejecucion">Tiempo de ejecucion</label>
+                <input type="number" id="ejecucion" min="0" required>
+            </div>
+            <div class="campo">
+                <input type="button" value="Agregar" id="agregar">
+                <input type="button" value="Listar" id="listar">
+            </div>
+        </form>
+    </section>
+
+
     <!--
     <div class="contenedor centrar-texto">
         <h1>Algoritmo de Planificación</h1>
@@ -51,7 +75,8 @@
             <input type="button" value="Listar" id="listar">
         </form>
     </div>
-
+    -->
+    
     <div class="contenedor centrar-texto">
         <h3>Lista de Procesos</h3>
         <ul class="lista-procesos" id="lista-procesos"></ul>
@@ -61,7 +86,7 @@
         <h3>Diagrama de Gantt</h3>
         <div class="diagrama" id="diagrama"></div>   
     </div>
-    -->
+    
 
 
     <script src="index.js"></script>

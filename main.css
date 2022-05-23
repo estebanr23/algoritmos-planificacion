@@ -27,18 +27,18 @@ body {
 .centrar-texto {
     text-align: center;
 }
-h1, h2, h3, h4 {
-    margin: 10px 0;
-}
 
 /* Header */
 header {
+    /*
     background-color: rgb(19, 123, 184);
-    padding: 10px 0;
+    */
+    background: rgb(1,119,159);
+    background: linear-gradient(90deg, rgba(1,119,159,1) 0%, rgba(5,105,184,1) 0%, rgba(1,126,166,1) 0%, rgba(0,212,255,1) 0%, rgba(1,168,209,1) 24%, rgba(29,36,117,1) 100%, rgba(2,119,163,1) 100%, rgba(9,9,121,1) 100%);
 }
 header img {
-    width: 300px;
-    height: 100px;
+    width: 240px;
+    height: 80px;
 }
 nav {
     background-color: #ffffff;
@@ -47,10 +47,82 @@ nav .menu {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 10px 0;
 }
-nav .menu a {
+nav .menu li {
+    width: 100%;
+    text-align: center;
+}
+nav .menu li a {
     text-decoration: none;
     color: #000000;
     font-weight: 500;
+    display: block;
+    padding: 5px 0 3px 0;
+    border-bottom: 2px solid #ffffff;;
+}
+nav .menu li a:hover {
+    cursor: pointer;
+    border-bottom: 2px solid #01a8d1;
+}
+section {
+    padding: 20px 0;
+}
+section form {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px 0;
+    border: 1px solid #9e9d9d;
+    border-radius: 10px;
+    /*
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    */
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+section form .campo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 40px;
+}
+
+section form .campo label {
+    text-align: start;
+    margin-bottom: 2px;
+}
+section form .campo input {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 5px 2px 2px 5px;
+}
+section form .campo input[type=button] {
+    margin: 10px 0;
+    background-color: #01a8d1;
+    border: none;
+    padding: 5px 0;
+    color: #ffffff;
+    font-weight: 600;
+}
+section form .campo input[type=button]:hover {
+    cursor: pointer;
+    background-color: #0099be
+}
+
+/* Diagrama */ 
+.diagrama {
+    margin: 20px 0;
+    padding: 10px;
+}
+table {
+    /*width: 800px;*/
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
 }

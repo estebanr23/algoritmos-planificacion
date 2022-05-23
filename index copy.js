@@ -16,14 +16,16 @@ btnAgregar.addEventListener('click', agregarProceso);
 btnListar.addEventListener('click', crearNodo);
 
 function agregarProceso() {
-    let nombre = document.getElementById('nombre').value;
+    let nombre = document.getElementById('proceso').value;
     let llegada = document.getElementById('llegada').value;
     let ejecucion = document.getElementById('ejecucion').value;
+    let prioridad = document.getElementById('prioridad').value;
 
     let nuevoProceso = {
-        'nombre': nombre,
+        'proceso': nombre,
         'llegada': llegada,
-        'ejecucion': ejecucion
+        'ejecucion': ejecucion,
+        'prioridad': prioridad
     }
     procesos.push(nuevoProceso);  
     console.log(procesos); 
@@ -32,7 +34,7 @@ function agregarProceso() {
 function crearNodo() {
     for(p of procesos) {
         let nodo = document.createElement('li');
-        let contenido = document.createTextNode('Proceso: ' + p.nombre + '  -  T. Llegada: ' + p.llegada + '  -  T.Ejecucion: ' + p.ejecucion + '  -  Priorodad' + p.prioridad);
+        let contenido = document.createTextNode('Proceso: ' + p.proceso + '  -  T. Llegada: ' + p.llegada + '  -  T.Ejecucion: ' + p.ejecucion + '  -  Priorodad' + p.prioridad);
         nodo.appendChild(contenido);
         listaProcesos.appendChild(nodo);
     }
@@ -116,7 +118,7 @@ for(let i = 1; i <= procesos.length; i++) {
         if(secuencia[j] === procesos[i-1].nombre) {
             let column = document.createElement('td');
             column.innerHTML = secuencia[j];
-            column.style.backgroundColor="#01a8d1";
+            column.style.backgroundColor="rgb(57, 173, 240)";
             row.appendChild(column);
         } else {
             let column = document.createElement('td');
