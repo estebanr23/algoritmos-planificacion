@@ -29,8 +29,9 @@
     </nav>
 
     <section class="contenedor centrar-texto">
-        <h1>Algoritmo de Planificación FCFS</h1>
+        <h1>Algoritmo de Planificación</h1>
         <form action="#" name="form-procesos">
+            <h2>FCFS</h2>
             <div class="campo">
                 <label for="nombre">Proceso</label>
                 <input type="text" id="nombre" required>
@@ -75,11 +76,25 @@
             <input type="button" value="Listar" id="listar">
         </form>
     </div>
+
+    <div class="contenedor centrar-texto">
+        <h3>Lista de Procesos</h3>
+        <ul class="lista-procesos" id="lista-procesos"></ul>
+    </div>
     -->
     
     <div class="contenedor centrar-texto">
         <h3>Lista de Procesos</h3>
-        <ul class="lista-procesos" id="lista-procesos"></ul>
+        <table class="tabla-procesos">
+            <thead>
+                <tr>
+                    <th>Proceso</th>
+                    <th>Tiempo de Llegada</th>
+                    <th>Tiempo de Ejecucion</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-procesos"></tbody>
+        </table>
     </div>
     
     <div class="contenedor centrar-texto">

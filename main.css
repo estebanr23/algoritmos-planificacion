@@ -18,6 +18,9 @@ body {
     font-size: 1.6rem;
     font-family: 'Bai Jamjuree', sans-serif;
 }
+h1 {
+    font-size: 3.5rem;
+}
 
 /* Utilidades */
 .contenedor {
@@ -93,7 +96,7 @@ section form .campo label {
     margin-bottom: 2px;
 }
 section form .campo input {
-    border: 1px solid #000000;
+    border: 1px solid #9e9d9d;
     border-radius: 5px;
     padding: 5px 2px 2px 5px;
 }
@@ -110,18 +113,26 @@ section form .campo input[type=button]:hover {
     background-color: #0099be
 }
 
+/* Tabla Procesos */
+.tabla-procesos,
+.diagrama table {
+    margin: 20px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.tabla-procesos th,
+.tabla-procesos td {
+    border: 1px solid black;
+    padding: 2px 10px;
+}
+
 /* Diagrama */ 
 .diagrama {
     margin: 20px 0;
     padding: 10px;
 }
-table {
-    /*width: 800px;*/
-    margin: 0 auto;
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-td, th {
+.diagrama table td, 
+.diagrama table th {
     border: 1px solid black;
     width: 30px;
     height: 30px;

@@ -1,5 +1,44 @@
-//var procesos = [];
+(function(){
+    'use strict';
+    document.addEventListener('DOMContentLoaded', function(){
+        var procesos = [];
+        var btnAgregar = document.getElementById('agregar');
+        var btnListar = document.getElementById('listar');
+        var tablaProcesos = document.getElementById('tabla-procesos');
 
+        btnAgregar.addEventListener('click', agregarProceso);
+
+        function agregarProceso() {
+            let nombre = document.getElementById('nombre').value;
+            let llegada = document.getElementById('llegada').value;
+            let ejecucion = document.getElementById('ejecucion').value;
+
+            let nuevoProceso = {
+                'nombre': nombre,
+                'llegada': llegada,
+                'ejecucion': ejecucion
+            }
+
+            procesos.push(nuevoProceso); 
+            crearTabla(nuevoProceso);
+        }
+
+        function crearTabla(nuevoProceso) {
+            let row = document.createElement('tr');
+            for(const proc in nuevoProceso) {
+                let column = document.createElement('td');
+                column.innerHTML = `${nuevoProceso[proc]}`;
+                row.appendChild(column);
+            }
+            tablaProcesos.appendChild(row);
+        }
+
+    });
+})();
+
+
+
+/*
 var procesos = [
     {nombre: 'P1', ejecucion: 4, llegada: 0, prioridad: 1},
     {nombre: 'P2', ejecucion: 2, llegada: 3, prioridad: 3},
@@ -8,35 +47,6 @@ var procesos = [
     {nombre: 'P5', ejecucion: 1, llegada: 4, prioridad: 2}
 ];
 
-var btnAgregar = document.getElementById('agregar');
-var btnListar = document.getElementById('listar');
-var listaProcesos = document.getElementById('lista-procesos');
-
-btnAgregar.addEventListener('click', agregarProceso);
-btnListar.addEventListener('click', crearNodo);
-
-function agregarProceso() {
-    let nombre = document.getElementById('nombre').value;
-    let llegada = document.getElementById('llegada').value;
-    let ejecucion = document.getElementById('ejecucion').value;
-
-    let nuevoProceso = {
-        'nombre': nombre,
-        'llegada': llegada,
-        'ejecucion': ejecucion
-    }
-    procesos.push(nuevoProceso);  
-    console.log(procesos); 
-}
-
-function crearNodo() {
-    for(p of procesos) {
-        let nodo = document.createElement('li');
-        let contenido = document.createTextNode('Proceso: ' + p.nombre + '  -  T. Llegada: ' + p.llegada + '  -  T.Ejecucion: ' + p.ejecucion + '  -  Priorodad' + p.prioridad);
-        nodo.appendChild(contenido);
-        listaProcesos.appendChild(nodo);
-    }
-}
 
 // Prueba de Grilla
 var t;
@@ -105,6 +115,7 @@ for(let i = 1; i <= filas; i++) {
 }
 */
 
+/*
 for(let i = 1; i <= procesos.length; i++) {
     let row = document.createElement('tr');
     let columnIni = document.createElement('td');
@@ -126,3 +137,4 @@ for(let i = 1; i <= procesos.length; i++) {
     }
     tbody.appendChild(row);
 }
+**/
