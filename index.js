@@ -1,12 +1,13 @@
 (function(){
     'use strict';
     document.addEventListener('DOMContentLoaded', function(){
-        var procesos = [];
+        //var procesos = [];
         var btnAgregar = document.getElementById('agregar');
-        var btnListar = document.getElementById('listar');
+        var btnFin = document.getElementById('finalizar');
         var tablaProcesos = document.getElementById('tabla-procesos');
 
         btnAgregar.addEventListener('click', agregarProceso);
+        btnFin.addEventListener('click', crearDiagrama);
 
         function agregarProceso() {
             let nombre = document.getElementById('nombre').value;
@@ -38,7 +39,7 @@
 
 
 
-/*
+
 var procesos = [
     {nombre: 'P1', ejecucion: 4, llegada: 0, prioridad: 1},
     {nombre: 'P2', ejecucion: 2, llegada: 3, prioridad: 3},
@@ -48,12 +49,11 @@ var procesos = [
 ];
 
 
-// Prueba de Grilla
+// Crear Diagrama
 var t;
 var diagrama = document.getElementById('diagrama');
 var table = document.createElement('table');
 diagrama.appendChild(table);
-
 
 var thead = document.createElement('thead');
 var tbody = document.createElement('tbody');
@@ -72,9 +72,17 @@ var secuencia = [
     'P4'
 ];
 
-t = secuencia.length;
+function crearDiagrama() {
+    t = secuencia.length;
 
-//function crearCabecera() {
+    crearCabecera();
+
+    crearCuerpo();
+
+}
+
+// Cabecera de la tabla
+function crearCabecera() {
     let row_1 = document.createElement('tr');
     for(let i = 0; i <= t; i++) {
         if(i === 0) {
@@ -87,54 +95,34 @@ t = secuencia.length;
         }
     }
     thead.appendChild(row_1);
-//}
-
-var filas = procesos.length;
-console.log(filas);
-
-/*
-let row_2 = document.createElement('tr');
-
-for(let i = 1; i <= t; i++) {
-    let row_2_data_1 = document.createElement('td');
-    row_2_data_1.innerHTML = 'P1';
-    row_2.appendChild(row_2_data_1);
 }
-tbody.appendChild(row_2);
-*/
-/*
-for(let i = 1; i <= filas; i++) {
-    let row = document.createElement('tr');
-    for(let j = 0; j <= t; j++) {
-        let column = document.createElement('td');
-        column.innerHTML = 'P1';
-        //column.style.backgroundColor = "yellow";
-        row.appendChild(column);
-    }
-    tbody.appendChild(row);
-}
-*/
 
-/*
-for(let i = 1; i <= procesos.length; i++) {
-    let row = document.createElement('tr');
-    let columnIni = document.createElement('td');
-    columnIni.innerHTML = procesos[i-1].nombre;
-    row.appendChild(columnIni);
-
-    for(let j = 0; j < t; j++) {
-        //column.style.backgroundColor = "yellow";
-        if(secuencia[j] === procesos[i-1].nombre) {
-            let column = document.createElement('td');
-            column.innerHTML = secuencia[j];
-            column.style.backgroundColor="#01a8d1";
-            row.appendChild(column);
-        } else {
-            let column = document.createElement('td');
-            //column.innerHTML = secuencia[j];
-            row.appendChild(column);
+// Cuerpo de la tabla
+function crearCuerpo() {
+    let filas = procesos.length;
+    for(let i = 1; i <= procesos.length; i++) {
+        let row = document.createElement('tr');
+        let columnIni = document.createElement('td');
+        columnIni.innerHTML = procesos[i-1].nombre;
+        row.appendChild(columnIni);
+    
+        for(let j = 0; j < t; j++) {
+            //column.style.backgroundColor = "yellow";
+            if(secuencia[j] === procesos[i-1].nombre) {
+                let column = document.createElement('td');
+                column.innerHTML = secuencia[j];
+                column.style.backgroundColor="#01a8d1";
+                row.appendChild(column);
+            } else {
+                let column = document.createElement('td');
+                //column.innerHTML = secuencia[j];
+                row.appendChild(column);
+            }
         }
+        tbody.appendChild(row);
     }
-    tbody.appendChild(row);
 }
-**/
+
+
+
+

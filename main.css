@@ -128,7 +128,6 @@ section form .campo input[type=button]:hover {
 
 /* Diagrama */ 
 .diagrama {
-    margin: 20px 0;
     padding: 10px;
 }
 .diagrama table td, 
