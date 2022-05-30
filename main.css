@@ -112,7 +112,10 @@ section form .campo input[type=button]:hover {
     cursor: pointer;
     background-color: #0099be
 }
-
+.mensaje-error {
+    color: red;
+    display: none;
+}
 /* Tabla Procesos */
 .tabla-procesos,
 .diagrama table {
