@@ -85,7 +85,7 @@
         */
         
         function crearDiagrama() {
-            secuencia = fcfs(procesos);
+            secuencia = roundRobin(procesos); // Cambiamos el nombre para probar algoritmos.
 
             t = secuencia.length;
         

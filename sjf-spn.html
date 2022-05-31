@@ -23,7 +23,6 @@
                 <li><a href="#">SJF</a></li>
                 <li><a href="#">Round Robin</a></li>
                 <li><a href="#">Prioridad</a></li>
-                <li><a href="#">Acerca de</a></li>
             </ul>
         </div>
     </nav>
@@ -31,7 +30,7 @@
     <section class="contenedor centrar-texto">
         <h1>Algoritmo de Planificación</h1>
         <form action="#" name="form-procesos">
-            <h2>FCFS</h2>
+            <h2>SJF - SPN</h2>
             <div class="campo">
                 <label for="nombre">Proceso</label>
                 <input type="text" id="nombre" required>
@@ -51,38 +50,6 @@
             </div>
         </form>
     </section>
-
-
-    <!--
-    <div class="contenedor centrar-texto">
-        <h1>Algoritmo de Planificación</h1>
-        <form action="#" name="form-procesos">
-            <div class="campo">
-                <label for="proceso">Proceso</label>
-                <input type="text" id="proceso" placeholder="Nombre de proceso" required>
-            </div>
-            <div class="campo">
-                <label for="llegada">Tiempo de llegada</label>
-                <input type="number" id="llegada" placeholder="Tiempo de llegada" min="0" required>
-            </div>
-            <div class="campo">
-                <label for="ejecucion">Tiempo de ejecucion</label>
-                <input type="number" id="ejecucion" placeholder="Tiempo de Ejecucion" min="0" required>
-            </div>
-            <div class="campo">
-                <label for="prioridad">Prioridad</label>
-                <input type="number" id="prioridad" placeholder="Prioridad" min="0" required>
-            </div>
-            <input type="button" value="Agregar" id="agregar">
-            <input type="button" value="Listar" id="listar">
-        </form>
-    </div>
-
-    <div class="contenedor centrar-texto">
-        <h3>Lista de Procesos</h3>
-        <ul class="lista-procesos" id="lista-procesos"></ul>
-    </div>
-    -->
     
     <div class="contenedor centrar-texto">
         <h3>Lista de Procesos</h3>
@@ -104,7 +71,7 @@
     </div>
     
 
-    <script src="algoritmo.js"></script>
+    <script src="sjf-spn.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

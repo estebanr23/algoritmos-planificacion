@@ -18,7 +18,7 @@ var procesos = [
     {nombre: 'P3', ejecucion: 9, llegada: 5},
     {nombre: 'P4', ejecucion: 3, llegada: 8},
     {nombre: 'P5', ejecucion: 4, llegada: 7},
-    {nombre: 'P6', ejecucion: 3, llegada: 31}
+    //{nombre: 'P6', ejecucion: 3, llegada: 31}
 ]
 
 var cantidad=1;
