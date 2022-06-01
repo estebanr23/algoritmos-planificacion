@@ -1,17 +1,14 @@
 var procesos = [];
 var cola = [];
 var secuencia = [];
-var q = 2;
 
 var cantidad=1;
 var t=0;
-var i;
 
-function roundRobin(p) {
+function prioridadApropiativo(p) {
     procesos = p;
 
     while(cantidad <= procesos.length) {
-        i=1; // Para controlar quantum    
         // Primera iteracion 
         if(cola.length === 0) {
             controlarCola();
@@ -31,7 +28,7 @@ function roundRobin(p) {
 
 
 function ejecutar() {
-    while(cola[0].ejecucion > 0 && i <= q) { 
+    while(cola[0].ejecucion > 0) { 
         if(t < cola[0].llegada) {
             console.log('T=' + t);
             secuencia.push(''); // Nuevo --- Tiempos Muertos
@@ -41,7 +38,6 @@ function ejecutar() {
             secuencia.push(cola[0].nombre);
             console.log('T=' + t);
             console.log(secuencia);
-            i++;
         }
         
         //console.log(cola);  
@@ -69,7 +65,14 @@ function controlarCola() {
         if(proc.llegada === t) {
             if(!cola.some((element) => element.nombre === proc.nombre)) { // Verifica que no exista ya el proceso en la cola.
                 cola.push(proc);
+                ordenarCola();
             }
         }
+    }
+}
+
+function ordenarCola() {
+    if(cola.length > 1) {
+        cola.sort((a, b) => a.prioridad - b.prioridad);
     }
 }

@@ -41,9 +41,9 @@ function ejecutar() {
             console.log(secuencia);
         }
         
-        //console.log(cola);   
-        controlarCola();
+        //console.log(cola);
         t++;
+        controlarCola();           
     }
 
     if(cola[0].ejecucion === 0) {

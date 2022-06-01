@@ -40,9 +40,9 @@ function ejecutar() {
             console.log(secuencia);
         }
         
-        //console.log(cola);   
-        t++;
-        controlarCola(); // En apropiativos se invierte el orden
+        //console.log(cola);
+        t++; 
+        controlarCola(); // Se invierte el orden con t++  
     }
 
     if(cola[0].ejecucion === 0) {

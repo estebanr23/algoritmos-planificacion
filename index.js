@@ -85,7 +85,7 @@
         */
         
         function crearDiagrama() {
-            secuencia = roundRobin(procesos); // Cambiamos el nombre para probar algoritmos.
+            secuencia = prioridadApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
 
             t = secuencia.length;
         
