@@ -85,7 +85,7 @@
         */
         
         function crearDiagrama() {
-            secuencia = prioridadApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
+            secuencia = prioridadNoApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
 
             t = secuencia.length;
         
