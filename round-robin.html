@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@300;400;500&display=swap" rel="stylesheet"> <!--Font 1-->
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500&display=swap" rel="stylesheet"> <!--Font 2-->
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <title>Sistemas Operativos</title>
 </head>
@@ -19,58 +18,66 @@
     <nav>
         <div class="contenedor">
             <ul class="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">FCFS</a></li>
-                <li><a href="#">SJF</a></li>
-                <li><a href="#">Round Robin</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="fcfs.html">FCFS</a></li>
+                <li><a href="sjf-spn.html">SJF</a></li>
+                <li><a href="round-robin.html">Round Robin</a></li>
                 <li><a href="#">Prioridad</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="contenedor centrar-texto">
-        <h1>Algoritmo de Planificación</h1>
-        <form action="#" name="form-procesos">
-            <h2>Round Robin</h2>
-            <div class="campo">
-                <label for="nombre">Proceso</label>
-                <input type="text" id="nombre" required>
-            </div>
-            <div class="campo">
-                <label for="llegada">Tiempo de llegada</label>
-                <input type="number" id="llegada" min="0" required>
-            </div>
-            <div class="campo">
-                <label for="ejecucion">Tiempo de ejecucion</label>
-                <input type="number" id="ejecucion" min="0" required>
-            </div>
-            <div class="campo"><p class="mensaje-error" id="mensaje-error">El proceso ya existe</p></div>
-            <div class="campo">
-                <input type="button" value="Agregar" id="agregar">
-                <input type="button" value="Finalizar" id="finalizar">
-            </div>
-        </form>
-    </section>
+    <main>
+        <section class="contenedor centrar-texto">
+            <h1>Algoritmo de Planificación</h1>
+            <form action="#" name="form-procesos">
+                <h2>Round Robin</h2>
+                <div class="campo">
+                    <label for="nombre">Proceso</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="campo">
+                    <label for="llegada">Tiempo de llegada</label>
+                    <input type="number" id="llegada" min="0" required>
+                </div>
+                <div class="campo">
+                    <label for="ejecucion">Tiempo de ejecucion</label>
+                    <input type="number" id="ejecucion" min="0" required>
+                </div>
+                <div class="campo"><p class="mensaje-error" id="mensaje-error">El proceso ya existe</p></div>
+                <div class="campo">
+                    <input type="button" value="Agregar" id="agregar">
+                    <input type="button" value="Finalizar" id="finalizar">
+                </div>
+            </form>
+        </section>
+        
+        <div class="contenedor centrar-texto">
+            <h3>Lista de Procesos</h3>
+            <table class="tabla-procesos">
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>Tiempo de Llegada</th>
+                        <th>Tiempo de Ejecucion</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-procesos"></tbody>
+            </table>
+        </div>
+        
+        <div class="contenedor centrar-texto">
+            <h3>Diagrama de Gantt</h3>
+            <div class="diagrama" id="diagrama"></div>   
+        </div>
+    </main>
     
-    <div class="contenedor centrar-texto">
-        <h3>Lista de Procesos</h3>
-        <table class="tabla-procesos">
-            <thead>
-                <tr>
-                    <th>Proceso</th>
-                    <th>Tiempo de Llegada</th>
-                    <th>Tiempo de Ejecucion</th>
-                </tr>
-            </thead>
-            <tbody id="tabla-procesos"></tbody>
-        </table>
-    </div>
-    
-    <div class="contenedor centrar-texto">
-        <h3>Diagrama de Gantt</h3>
-        <div class="diagrama" id="diagrama"></div>   
-    </div>
-    
+    <footer>
+        <div class="contenedor">
+            <p>Sistemas Operativos</p>
+            <p>2022</p>
+        </div>
+    </footer>
 
     <script src="round-robin.js"></script>
     <script src="index.js"></script>
