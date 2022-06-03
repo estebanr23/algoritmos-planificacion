@@ -100,7 +100,8 @@ section form .campo label {
     text-align: start;
     margin-bottom: 2px;
 }
-section form .campo input {
+section form .campo input,
+section form .campo select {
     border: 1px solid #9e9d9d;
     border-radius: 5px;
     padding: 5px 2px 2px 5px;
@@ -150,6 +151,7 @@ footer {
     background: rgb(1,119,159);
     background: linear-gradient(90deg, rgba(1,119,159,1) 0%, rgba(5,105,184,1) 0%, rgba(1,126,166,1) 0%, rgba(0,212,255,1) 0%, rgba(1,168,209,1) 24%, rgba(29,36,117,1) 100%, rgba(2,119,163,1) 100%, rgba(9,9,121,1) 100%);
     padding: 10px;
+    color: #ffffff;
 }
 footer div {
     display: flex;
