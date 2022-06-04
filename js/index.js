@@ -3,10 +3,10 @@
     document.addEventListener('DOMContentLoaded', function(){
         var procesos = []; // Comentado
         var secuencia = [];
+        var url = window.location.pathname;
         var btnAgregar = document.getElementById('agregar');
         var btnFin = document.getElementById('finalizar');
         var tablaProcesos = document.getElementById('tabla-procesos');
-
         btnAgregar.addEventListener('click', agregarProceso);
         btnFin.addEventListener('click', crearDiagrama);
 
@@ -17,11 +17,23 @@
             let msjError = document.getElementById('mensaje-error');
             msjError.style.display='none';
             let repetido=false;
+            let nuevoProceso;
 
-            let nuevoProceso = {
-                'nombre': nombre,
-                'llegada': Number(llegada),
-                'ejecucion': Number(ejecucion)
+            if (url === '/prioridadApropiativo.html' || url === '/prioridadNoApropiativo.html') {
+                var prioridad = document.getElementById('prioridad').value;
+                console.log(prioridad);
+                nuevoProceso = {
+                    'nombre': nombre,
+                    'llegada': Number(llegada),
+                    'ejecucion': Number(ejecucion),
+                    'prioridad': Number(prioridad)
+                }
+            } else {
+                nuevoProceso = {
+                    'nombre': nombre,
+                    'llegada': Number(llegada),
+                    'ejecucion': Number(ejecucion)
+                }
             }
 
             // Verificar que el proceso no exista
@@ -85,7 +97,7 @@
         */
         
         function crearDiagrama() {
-            secuencia = fcfs(procesos); // Cambiamos el nombre para probar algoritmos.
+            secuencia = prioridadNoApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
 
             t = secuencia.length;
         
