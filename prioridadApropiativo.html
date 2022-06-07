@@ -22,7 +22,16 @@
                 <li><a href="fcfs.html">FCFS</a></li>
                 <li><a href="sjf-spn.html">SJF</a></li>
                 <li><a href="round-robin.html">Round Robin</a></li>
-                <li><a href="#">Prioridad</a></li>
+                <li id="enlace-prioridad">
+                    <ul>
+                        <li><a href="">Prioridad</a></li>
+                        <div class="submenu" id="submenu">
+                            <li><a href="prioridadApropiativo.html">Apropiativo</a></li>
+                            <li><a href="prioridadNoApropiativo.html">No Apropiativo</a></li>
+                        </div>
+                    </ul>
+                </li>
+
             </ul>
         </div>
     </nav>
@@ -31,7 +40,7 @@
         <section class="contenedor centrar-texto">
             <h1>Algoritmo de Planificación</h1>
             <form action="#" name="form-procesos">
-                <h2>Prioridad Aprop</h2>
+                <h2>Prioridad Apro.</h2>
                 <div class="campo">
                     <label for="nombre">Proceso</label>
                     <input type="text" id="nombre" required>
@@ -93,6 +102,7 @@
         </div>
     </footer>
     
+    <script src="js/menu.js"></script>
     <script src="js/prioridadApropiativo.js"></script>
     <script src="js/index.js"></script>
 </body>
