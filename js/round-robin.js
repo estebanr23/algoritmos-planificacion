@@ -1,15 +1,15 @@
 var procesos = [];
 var cola = [];
 var secuencia = [];
-var q = 2;
+var q;
 
 var cantidad=1;
 var t=0;
 var i;
 
-function roundRobin(p) {
+function roundRobin(p, quantum) {
     procesos = p;
-
+    q = quantum;
     while(cantidad <= procesos.length) {
         i=1; // Para controlar quantum    
         // Primera iteracion 

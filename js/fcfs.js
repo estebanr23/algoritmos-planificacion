@@ -5,7 +5,7 @@ var secuencia = [];
 var cantidad=1;
 var t=0;
 
-function fcfs(p) {
+function resolverAlgoritmo(p) {
     procesos = p;
 
     while(cantidad <= procesos.length) {    

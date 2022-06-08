@@ -97,7 +97,22 @@
         */
         
         function crearDiagrama() {
-            secuencia = prioridadNoApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
+            //secuencia = prioridadNoApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
+            switch (url) {
+                case '/prioridadApropiativo.html':
+                    secuencia = prioridadApropiativo(procesos);
+                    break;
+                case '/prioridadNoApropiativo.html':
+                    secuencia = prioridadNoApropiativo(procesos);
+                    break;
+                case '/round-robin.html':
+                    let quantum = Number(document.getElementById('quantum').value);
+                    secuencia = roundRobin(procesos, quantum);
+                    break;
+                default:
+                    secuencia = resolverAlgoritmo(procesos);
+                    break;
+            }
 
             t = secuencia.length;
         
