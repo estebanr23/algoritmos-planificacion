@@ -21,6 +21,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="fcfs.html">FCFS</a></li>
                 <li><a href="sjf-spn.html">SJF</a></li>
+                <li><a href="srtf.html">SRTF</a></li>
                 <li><a href="round-robin.html">Round Robin</a></li>
                 <li id="enlace-prioridad">
                     <ul>
@@ -53,7 +54,7 @@
                     <label for="ejecucion">Tiempo de ejecucion</label>
                     <input type="number" id="ejecucion" min="0" required>
                 </div>
-                <div class="campo"><p class="mensaje-error" id="mensaje-error">El proceso ya existe</p></div>
+                <div class="campo"><p class="mensaje-error" id="mensaje-error"></p></div>
                 <div class="campo">
                     <input type="button" value="Agregar" id="agregar">
                     <input type="button" value="Finalizar" id="finalizar">
@@ -61,7 +62,7 @@
             </form>
         </section>
         
-        <div class="contenedor centrar-texto">
+        <div class="contenedor centrar-texto" id="div-procesos">
             <h3>Lista de Procesos</h3>
             <table class="tabla-procesos">
                 <thead>
@@ -75,7 +76,7 @@
             </table>
         </div>
         
-        <div class="contenedor centrar-texto">
+        <div class="contenedor centrar-texto" id="div-diagrama">
             <h3>Diagrama de Gantt</h3>
             <div class="diagrama" id="diagrama"></div>   
         </div>

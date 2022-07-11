@@ -7,6 +7,8 @@
         var btnAgregar = document.getElementById('agregar');
         var btnFin = document.getElementById('finalizar');
         var tablaProcesos = document.getElementById('tabla-procesos');
+        var divProcesos = document.getElementById('div-procesos');
+        var divDiagrama = document.getElementById('div-diagrama');
         btnAgregar.addEventListener('click', agregarProceso);
         btnFin.addEventListener('click', crearDiagrama);
 
@@ -17,7 +19,9 @@
             let msjError = document.getElementById('mensaje-error');
             msjError.style.display='none';
             let repetido=false;
+            let nulo=false;
             let nuevoProceso;
+            let i=0;
 
             if (url === '/prioridadApropiativo.html' || url === '/prioridadNoApropiativo.html') {
                 var prioridad = document.getElementById('prioridad').value;
@@ -36,16 +40,30 @@
                 }
             }
 
-            // Verificar que el proceso no exista
-            for(let proc of procesos) {
-                if(proc.nombre === nuevoProceso.nombre) {
-                   repetido = true; 
+            // Verificar que el proceso no exista o sea nulo
+            if(!nuevoProceso.nombre) {
+                nulo = true; 
+            } else {
+                for(let proc of procesos) {
+                    if(proc.nombre === nuevoProceso.nombre) {
+                       repetido = true; 
+                    }
                 }
             }
-            if(!repetido) {
+            
+            if(!repetido && !nulo) {
                 procesos.push(nuevoProceso); 
                 crearTabla(nuevoProceso); 
-            } else {
+                if(i === 0) {
+                    divProcesos.style.display='block';
+                    i++;
+                }
+                
+            } else if(repetido) {
+                msjError.innerHTML='El proceso ya existe';
+                msjError.style.display='block';
+            } else{
+                msjError.innerHTML='Debe completar los campos';
                 msjError.style.display='block';
             }
             
@@ -119,6 +137,8 @@
             crearCabecera();
         
             crearCuerpo();
+
+            divDiagrama.style.display='block';
         }
         
         // Cabecera de la tabla
