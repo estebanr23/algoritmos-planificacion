@@ -200,6 +200,19 @@ section form .campo input[type=button]:hover {
     height: 30px;
 }
 
+/* Calculos */
+#calculos {
+    display: none;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+#calculos>div {
+    margin: 0 10rem;
+}
+#calculos ul li {
+    list-style: none;
+}
+
 /* Footer */
 footer {
     background: rgb(1,119,159);

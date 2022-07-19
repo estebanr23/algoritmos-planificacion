@@ -127,8 +127,12 @@
                     let quantum = Number(document.getElementById('quantum').value);
                     secuencia = roundRobin(procesos, quantum);
                     break;
+                case '/srtf.html':
+                    secuencia = srtf(procesos);
+                    break;
                 default:
                     secuencia = resolverAlgoritmo(procesos);
+                    tiempoNoApropiativo(secuencia);
                     break;
             }
 
