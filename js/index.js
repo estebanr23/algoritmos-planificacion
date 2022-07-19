@@ -119,20 +119,24 @@
             switch (url) {
                 case '/prioridadApropiativo.html':
                     secuencia = prioridadApropiativo(procesos);
+                    tiempoApropiativo(procesos, secuencia);
                     break;
                 case '/prioridadNoApropiativo.html':
                     secuencia = prioridadNoApropiativo(procesos);
+                    tiempoApropiativo(procesos, secuencia);
                     break;
                 case '/round-robin.html':
                     let quantum = Number(document.getElementById('quantum').value);
                     secuencia = roundRobin(procesos, quantum);
+                    tiempoApropiativo(procesos, secuencia);
                     break;
                 case '/srtf.html':
                     secuencia = srtf(procesos);
+                    tiempoApropiativo(procesos, secuencia);
                     break;
                 default:
                     secuencia = resolverAlgoritmo(procesos);
-                    tiempoNoApropiativo(secuencia);
+                    tiempoNoApropiativo(procesos, secuencia);
                     break;
             }
 
@@ -143,6 +147,7 @@
             crearCuerpo();
 
             divDiagrama.style.display='block';
+            btnFin.disabled = true;
         }
         
         // Cabecera de la tabla
@@ -168,13 +173,14 @@
                 let row = document.createElement('tr');
                 let columnIni = document.createElement('td');
                 columnIni.innerHTML = procesos[i-1].nombre;
+                columnIni.style.padding="0 5px";
                 row.appendChild(columnIni);
             
                 for(let j = 0; j < t; j++) {
                     //column.style.backgroundColor = "yellow";
                     if(secuencia[j] === procesos[i-1].nombre) {
                         let column = document.createElement('td');
-                        column.innerHTML = secuencia[j];
+                        // column.innerHTML = secuencia[j];
                         column.style.backgroundColor="#01a8d1";
                         row.appendChild(column);
                     } else {
