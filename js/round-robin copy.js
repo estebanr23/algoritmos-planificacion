@@ -46,10 +46,7 @@ function ejecutar() {
         
         //console.log(cola);  
         t++; 
-        if(q !== 1) {
-            controlarCola();
-        }
-        
+        controlarCola();
     }
 
     if(cola[0].ejecucion === 0) {
@@ -57,12 +54,8 @@ function ejecutar() {
         cola.splice(0, 1);
         controlarCola();
         cantidad++;
-    } else if(cola[0].ejecucion > 0 && q === 1) {
-        cola.push(cola[0]);
+    } else if(cola[0].ejecucion > 0) {
         controlarCola();
-        cola.splice(0, 1);
-    } else {
-        //controlarCola();
         cola.push(cola[0]);
         cola.splice(0, 1);
     }

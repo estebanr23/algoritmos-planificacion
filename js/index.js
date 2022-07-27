@@ -79,6 +79,26 @@
             tablaProcesos.appendChild(row);
         }
 
+        // Prueba quamtum 1
+        /* var procesos = [
+            {nombre: 'P1', ejecucion: 1, llegada: 4},
+            {nombre: 'P2', ejecucion: 5, llegada: 0},
+            {nombre: 'P3', ejecucion: 4, llegada: 1},
+            {nombre: 'P4', ejecucion: 3, llegada: 8},
+            {nombre: 'P5', ejecucion: 2, llegada: 12}
+        ];
+        var quantum = 1; */
+
+        // Prueba quamtum 4
+        /* var procesos = [
+            {nombre: 'P1', ejecucion: 3, llegada: 0},
+            {nombre: 'P2', ejecucion: 6, llegada: 2},
+            {nombre: 'P3', ejecucion: 4, llegada: 4},
+            {nombre: 'P4', ejecucion: 5, llegada: 6},
+            {nombre: 'P5', ejecucion: 2, llegada: 8}
+        ];
+        var quantum = 4; */
+
         /*
         var procesos = [
             {nombre: 'P1', ejecucion: 4, llegada: 0, prioridad: 1},
