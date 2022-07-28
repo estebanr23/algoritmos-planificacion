@@ -1,12 +1,14 @@
 var procesos = [];
 var cola = [];
 var secuencia = [];
+var ordenar;
 
 var cantidad=1;
 var t=0;
 
-function prioridadNoApropiativo(p) {
+function prioridadNoApropiativo(p, orden) {
     procesos = p;
+    ordenar = Number(orden);
 
     while(cantidad <= procesos.length) {
         // Primera iteracion 
@@ -68,11 +70,24 @@ function controlarCola() {
             }
         }
     }
-    ordenarCola();
+    if(ordenar === 1) {
+        ordenarColaMenor();
+    } else {
+        ordenarColaMayor();
+    }
+    // ordenarCola();
 }
 
-function ordenarCola() {
+// Menor valor, mayor prioridad
+function ordenarColaMenor() {
     if(cola.length > 1) {
         cola.sort((a, b) => a.prioridad - b.prioridad);
+    }
+}
+
+// Mayor valor, mayor prioridad
+function ordenarColaMayor() {
+    if(cola.length > 1) {
+        cola.sort((a, b) => b.prioridad - a.prioridad);
     }
 }

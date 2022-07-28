@@ -3,6 +3,7 @@
     document.addEventListener('DOMContentLoaded', function(){
         var procesos = []; // Comentado
         var secuencia = [];
+        var orden; // Algoritmo de Prioridad
         var url = window.location.pathname;
         var btnAgregar = document.getElementById('agregar');
         var btnFin = document.getElementById('finalizar');
@@ -25,7 +26,7 @@
 
             if (url === '/prioridadApropiativo.html' || url === '/prioridadNoApropiativo.html') {
                 var prioridad = document.getElementById('prioridad').value;
-                console.log(prioridad);
+                // console.log(prioridad);
                 nuevoProceso = {
                     'nombre': nombre,
                     'llegada': Number(llegada),
@@ -138,11 +139,13 @@
             //secuencia = prioridadNoApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
             switch (url) {
                 case '/prioridadApropiativo.html':
-                    secuencia = prioridadApropiativo(procesos);
+                    orden = document.getElementById('orden').value;
+                    secuencia = prioridadApropiativo(procesos, orden);
                     tiempoApropiativo(procesos, secuencia);
                     break;
                 case '/prioridadNoApropiativo.html':
-                    secuencia = prioridadNoApropiativo(procesos);
+                    orden = document.getElementById('orden').value;
+                    secuencia = prioridadNoApropiativo(procesos, orden);
                     tiempoApropiativo(procesos, secuencia);
                     break;
                 case '/round-robin.html':
