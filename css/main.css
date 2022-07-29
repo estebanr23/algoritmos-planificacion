@@ -13,12 +13,13 @@ body {
     font-family: 'Bai Jamjuree', sans-serif;
 }
 h1 {
+    margin-top: 1rem;
     font-size: 3.5rem;
 }
 
 /* Utilidades */
 .contenedor {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .centrar-texto {
@@ -82,6 +83,29 @@ nav .menu li ul .submenu {
     background-color: #ffffff;
 }
 
+/* Menu movil */
+.contenedor-movil {
+    height: 40px;
+    position: relative;
+    display: none;
+}
+div.menu-movil {
+    width: 50px;
+    position: absolute;
+    display: block;
+    right: 20px;
+    top: 10px;
+}
+div.menu-movil:hover {
+    cursor: pointer;
+}
+div.menu-movil span {
+    height: 4px;
+    margin-bottom: 6px;
+    background-color: rgb(43, 43, 43);
+    display: block;
+}
+
 /* Main */
 main {
     min-height: calc(100vh - 150px)
@@ -95,6 +119,12 @@ main {
     display: block;
     margin: 0 auto;
 }
+.teoria p {
+    text-align: justify;
+}
+section.integrantes {
+    padding-top: 2rem;
+}
 .alumnos {
     display: flex;
     justify-content: space-evenly;
@@ -103,7 +133,7 @@ main {
 }
 .alumnos article {
     text-align: center;
-    padding: 4rem 4rem 6rem 4rem;
+    padding: 4rem 5rem 6rem 5rem;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     transition: all 0.4s;
@@ -116,14 +146,20 @@ main {
     box-shadow: 0px 0px 8px 0px rgba(1,168,209,1);
 }
 .alumnos img {
-    width: 150px;
-    height: 150px;
+    width: 135px;
+    height: 135px;
     border-radius: 50%;
     margin-bottom: 2rem;
 }
+.alumnos span {
+    display: inline-block; 
+    width: 100px;
+    color: #666666;
+    font-size: 1.5rem;
+}
 
 /* Vistas Algoritmos*/
-section {
+section .algoritmos{
     padding: 20px 0;
 }
 section form {
@@ -168,6 +204,7 @@ section form .campo input[type=button]:hover {
     color: red;
     display: none;
 }
+
 /* Tabla Procesos */
 #div-procesos {
     display: none;
@@ -225,3 +262,98 @@ footer div {
     justify-content: space-between;
     align-items: center;
 }
+
+/* Media Query */
+@media only screen and (max-width: 992px) {
+    .contenedor {
+        width: 92%;
+    }
+    .teoria img {
+        width: 100%;
+        height: 450px;
+    }
+
+    /* Algoritmos */
+    #diagrama {
+        overflow: scroll;
+        padding-top: 0;
+    }
+    .diagrama table td, 
+    .diagrama table th {
+        min-width: 30px;
+    }
+    #calculos div {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Index */
+    .contenedor {
+        width: 95%;
+    }
+    .teoria img {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    /* Index */
+    header .encabezado {
+        justify-content: center;
+    }
+    header img.escudo {
+        display: none;
+    }
+    h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+    .contenedor-movil {
+        display: block;
+    }
+    nav {
+        display: none;
+        clear: both;
+        background-color: #f2f2f2;
+        margin-bottom: 10px;
+    }
+    nav .menu {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contenedor {
+        width: 97%;
+    }
+    .teoria img {
+        width: 100%;
+        height: 380px;
+    }
+    
+    /* Algoritmos */
+    #div-procesos {
+        padding: 0 20px;
+    }
+    #calculos {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .teoria img {
+        height: 250px;
+    }
+    .alumnos {
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+    .alumnos article {
+        padding: 6rem 1rem 6rem 1rem;
+        /* margin: 2rem 6rem; */
+        margin: 2rem 15%;
+    }
+}
+
+
