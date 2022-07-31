@@ -3,14 +3,10 @@ function tiempoNoApropiativo(procesos, secuencia) {
     let resultado = [];
     let tiempo;
 
-    /* let lista = new Set(secuencia);
-    let procesos = Array.from(lista); */
-
     for(const p of procesos) {
         let inicio = secuencia.findIndex((element) => element === p.nombre);
         let fin = secuencia.findLastIndex((element) => element === p.nombre);
 
-        //tiempo = {proceso: p.nombre, respuesta: (fin + 1), espera: (inicio + 1)};
         tiempo = {proceso: p.nombre, respuesta: ((fin + 1) - p.llegada), espera: (inicio - p.llegada)};
         resultado.push(tiempo);
     }
@@ -22,28 +18,11 @@ function tiempoNoApropiativo(procesos, secuencia) {
     }
 
     mostrarResultado(procesos, resultado, respuestaTotal, esperaTotal);
-
-    /* console.log(resultado);
-    console.log(respuestaTotal);
-    console.log(esperaTotal); */
    
 }
 
 
 // Calculo Algoritmos Apropiativos
-
-/* var procesos = [
-    {nombre: 'P1', ejecucion: 7, llegada: 0},
-    {nombre: 'P2', ejecucion: 4, llegada: 2},
-    {nombre: 'P3', ejecucion: 1, llegada: 4},
-    {nombre: 'P4', ejecucion: 4, llegada: 5},
-];
-
-var secuencia = ['P1', 'P1', 'P2', 'P2', 'P3', 'P2', 'P2', 'P4', 'P4', 'P4', 'P4', 'P1', 'P1', 'P1', 'P1', 'P1'];
-console.log(secuencia); */
-
-
-
 function tiempoApropiativo(procesos, secuencia) {
     let resultado = [];
     let tiempo;
@@ -68,10 +47,6 @@ function tiempoApropiativo(procesos, secuencia) {
     // Mostrar resultado
     mostrarResultado(procesos, resultado, respuestaTotal, esperaTotal);
 
-    /* console.log(resultado);
-    console.log(respuestaTotal);
-    console.log(esperaTotal); */
-
 } // Cierre de funcion tiempoApropiativo()
 
 
@@ -90,7 +65,6 @@ function calcularEspera(procesos, secuencia) {
         }
         dividido.push(array);
     }
-    console.log(dividido); 
 
 
     // 2° Modificar arrays parciales - Con *
@@ -110,7 +84,6 @@ function calcularEspera(procesos, secuencia) {
         }
         aux1.push(aux);
     });
-    console.log(aux1); 
 
 
     // 3° Reaizar calculos
@@ -125,28 +98,25 @@ function calcularEspera(procesos, secuencia) {
                     inicio = element[i];
                     fin = p.llegada;
                     suma = suma + (inicio - fin);
-                    console.log(`suma = ${inicio} - ${fin}`);
+                    // console.log(`suma = ${inicio} - ${fin}`);
 
                 } 
                 if(element[i] === '*') {
                     inicio = element[i+1];
                     finAnt = element[i-1] + 1; 
                     suma = suma + (inicio - finAnt);
-                    console.log(`suma = ${inicio} - ${finAnt}`);
                 }
             }
         } else {
             inicio = element[0];
             fin = p.llegada;
             suma = suma + (inicio - fin);
-            console.log(`suma = ${inicio} - ${fin}`);
         }  
 
         espera.push(suma);
-        console.log(suma);
         j++;
     }
-    console.log(espera);
+    
     return espera;
 } // Cierre de funcion calcularEspera()
 
@@ -182,7 +152,4 @@ function mostrarResultado(procesos, resultado, respuestaTotal, esperaTotal){
 
     calculos.style.display='flex';
 }
-
-
-// tiempoApropiativo(procesos, secuencia);
 

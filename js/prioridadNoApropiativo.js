@@ -19,7 +19,6 @@ function prioridadNoApropiativo(p, orden) {
         if(cola.length >= 1) {
             ejecutar();
         } else {
-            console.log('T=' + t);
             secuencia.push(''); // Nuevo --- Tiempos Muertos
             t++;
         }
@@ -32,23 +31,17 @@ function prioridadNoApropiativo(p, orden) {
 function ejecutar() {
     while(cola[0].ejecucion > 0) { 
         if(t < cola[0].llegada) {
-            console.log('T=' + t);
             secuencia.push(''); // Nuevo --- Tiempos Muertos
         } else if(t >= cola[0].llegada) { 
             cola[0].ejecucion--;
-            //secuencia.push(cola[0].nombre + "(" + cola[0].ejecucion+ ")");
             secuencia.push(cola[0].nombre);
-            console.log('T=' + t);
-            console.log(secuencia);
         }
         
-        //console.log(cola);  
         t++; 
         controlarCola();
     }
 
     if(cola[0].ejecucion === 0) {
-        console.log('Final de ' + cola[0].nombre + '   T=' + (t-1));
         cola.splice(0, 1);
         controlarCola();
         cantidad++;
@@ -58,7 +51,6 @@ function ejecutar() {
         cola.splice(0, 1);
     }
 
-    console.log(cola);  
     ordenarCola();
 }
 
@@ -75,7 +67,6 @@ function controlarCola() {
     } else {
         ordenarColaMayor();
     }
-    // ordenarCola();
 }
 
 // Menor valor, mayor prioridad

@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     document.addEventListener('DOMContentLoaded', function(){
-        var procesos = []; // Comentado
+        var procesos = []; 
         var secuencia = [];
         var orden; // Algoritmo de Prioridad
         var url = window.location.pathname;
@@ -26,7 +26,6 @@
 
             if (url === '/prioridadApropiativo.html' || url === '/prioridadNoApropiativo.html') {
                 var prioridad = document.getElementById('prioridad').value;
-                // console.log(prioridad);
                 nuevoProceso = {
                     'nombre': nombre,
                     'llegada': Number(llegada),
@@ -79,36 +78,6 @@
             }
             tablaProcesos.appendChild(row);
         }
-
-        // Prueba quamtum 1
-        /* var procesos = [
-            {nombre: 'P1', ejecucion: 1, llegada: 4},
-            {nombre: 'P2', ejecucion: 5, llegada: 0},
-            {nombre: 'P3', ejecucion: 4, llegada: 1},
-            {nombre: 'P4', ejecucion: 3, llegada: 8},
-            {nombre: 'P5', ejecucion: 2, llegada: 12}
-        ];
-        var quantum = 1; */
-
-        // Prueba quamtum 4
-        /* var procesos = [
-            {nombre: 'P1', ejecucion: 3, llegada: 0},
-            {nombre: 'P2', ejecucion: 6, llegada: 2},
-            {nombre: 'P3', ejecucion: 4, llegada: 4},
-            {nombre: 'P4', ejecucion: 5, llegada: 6},
-            {nombre: 'P5', ejecucion: 2, llegada: 8}
-        ];
-        var quantum = 4; */
-
-        /*
-        var procesos = [
-            {nombre: 'P1', ejecucion: 4, llegada: 0, prioridad: 1},
-            {nombre: 'P2', ejecucion: 2, llegada: 3, prioridad: 3},
-            {nombre: 'P3', ejecucion: 7, llegada: 1, prioridad: 0},
-            {nombre: 'P4', ejecucion: 5, llegada: 2, prioridad: 4},
-            {nombre: 'P5', ejecucion: 1, llegada: 4, prioridad: 2}
-        ];
-        */
         
         // Crear Diagrama
         var t;
@@ -123,20 +92,8 @@
         table.appendChild(tbody);
         
         // Contenido 
-        /*
-        var secuencia = [
-            'P1', 'P1', 'P1',
-            'P1', 'P3', 'P3',
-            'P3', 'P3', 'P3',
-            'P3', 'P3', 'P5',
-            'P2', 'P2', 'P4',
-            'P4', 'P4', 'P4',
-            'P4'
-        ];
-        */
         
         function crearDiagrama() {
-            //secuencia = prioridadNoApropiativo(procesos); // Cambiamos el nombre para probar algoritmos.
             switch (url) {
                 case '/prioridadApropiativo.html':
                     orden = document.getElementById('orden').value;
@@ -200,23 +157,18 @@
                 row.appendChild(columnIni);
             
                 for(let j = 0; j < t; j++) {
-                    //column.style.backgroundColor = "yellow";
                     if(secuencia[j] === procesos[i-1].nombre) {
                         let column = document.createElement('td');
-                        // column.innerHTML = secuencia[j];
                         column.style.backgroundColor="#01a8d1";
                         row.appendChild(column);
                     } else {
                         let column = document.createElement('td');
-                        //column.innerHTML = secuencia[j];
                         row.appendChild(column);
                     }
                 }
                 tbody.appendChild(row);
             }
         }
-        
-
     });
 })();
 
