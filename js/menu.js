@@ -27,5 +27,19 @@
         var tiempo = new Date();
         var year = tiempo.getFullYear();
         anio.innerHTML=year;
+
+        // Media Query Navegacion
+        var nav = document.getElementById('navegacion');
+        var mql = window.matchMedia('(min-width: 670px)');
+        mql.addListener(screenTest);
+        
+        function screenTest(e) {
+            if (e.matches) {
+              nav.style.display="block";
+            } else {
+                nav.style.display="none";
+            }
+        }
+
     });
 })();
