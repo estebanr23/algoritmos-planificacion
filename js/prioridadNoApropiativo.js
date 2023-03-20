@@ -51,7 +51,6 @@ function ejecutar() {
         cola.splice(0, 1);
     }
 
-    ordenarCola();
 }
 
 function controlarCola() {
