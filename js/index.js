@@ -184,7 +184,6 @@
         // Validar Formulario
         function validarFormulario(nombre, llegada, ejecucion) {
             if(!nombre || !llegada || !ejecucion) {
-                console.log(nombre, llegada, ejecucion);
                 return false;
             }
             return true;
