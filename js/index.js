@@ -24,6 +24,13 @@
             let nuevoProceso;
             let i=0;
 
+            // Si algun campo es nulo se detiene la ejecucion
+            if(!validarFormulario(nombre, llegada, ejecucion)) {
+                msjError.innerHTML='Debe completar los campos';
+                msjError.style.display='block';
+                return;
+            }
+
             if (url === '/prioridadApropiativo.html' || url === '/prioridadNoApropiativo.html') {
                 var prioridad = document.getElementById('prioridad').value;
                 nuevoProceso = {
@@ -94,6 +101,9 @@
         // Contenido 
         
         function crearDiagrama() {
+            // Si no existen procesos no se ejecuta
+            if (procesos.length === 0) return;
+            
             switch (url) {
                 case '/prioridadApropiativo.html':
                     orden = document.getElementById('orden').value;
@@ -107,6 +117,7 @@
                     break;
                 case '/round-robin.html':
                     let quantum = Number(document.getElementById('quantum').value);
+                    if(quantum < 1) return;
                     secuencia = roundRobin(procesos, quantum);
                     tiempoApropiativo(procesos, secuencia);
                     break;
@@ -168,6 +179,15 @@
                 }
                 tbody.appendChild(row);
             }
+        }
+
+        // Validar Formulario
+        function validarFormulario(nombre, llegada, ejecucion) {
+            if(!nombre || !llegada || !ejecucion) {
+                console.log(nombre, llegada, ejecucion);
+                return false;
+            }
+            return true;
         }
     });
 })();

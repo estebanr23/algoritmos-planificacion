@@ -108,7 +108,7 @@ div.menu-movil span {
 
 /* Main */
 main {
-    min-height: calc(100vh - 150px)
+    min-height: calc(100vh - 160px)
 }
 .teoria p {
     margin-top: 10px;
