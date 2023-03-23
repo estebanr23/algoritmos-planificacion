@@ -33,6 +33,11 @@
 
             if (url === '/prioridad-apropiativo.html' || url === '/prioridad-no-apropiativo.html') {
                 var prioridad = document.getElementById('prioridad').value;
+                if (prioridad <= 0) {
+                    msjError.innerHTML='Prioridad debe ser mayor a 0.';
+                    msjError.style.display='block';
+                    return;
+                }
                 nuevoProceso = {
                     'nombre': nombre,
                     'llegada': Number(llegada),
@@ -183,7 +188,7 @@
 
         // Validar Formulario
         function validarFormulario(nombre, llegada, ejecucion) {
-            if(!nombre || !llegada || !ejecucion) {
+            if(!nombre || !llegada || ejecucion<=0) {
                 return false;
             }
             return true;
