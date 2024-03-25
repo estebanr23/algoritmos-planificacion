@@ -31,7 +31,7 @@
                 return;
             }
 
-            if (url === '/prioridad-apropiativo.html' || url === '/prioridad-no-apropiativo.html') {
+            if (url === '/prioridad-apropiativo' || url === '/prioridad-no-apropiativo') {
                 var prioridad = document.getElementById('prioridad').value;
                 if (prioridad <= 0) {
                     msjError.innerHTML='Prioridad debe ser mayor a 0.';
@@ -110,23 +110,23 @@
             if (procesos.length === 0) return;
             
             switch (url) {
-                case '/prioridad-apropiativo.html':
+                case '/prioridad-apropiativo':
                     orden = document.getElementById('orden').value;
                     secuencia = prioridadApropiativo(procesos, orden);
                     tiempoApropiativo(procesos, secuencia);
                     break;
-                case '/prioridad-no-apropiativo.html':
+                case '/prioridad-no-apropiativo':
                     orden = document.getElementById('orden').value;
                     secuencia = prioridadNoApropiativo(procesos, orden);
                     tiempoApropiativo(procesos, secuencia);
                     break;
-                case '/round-robin.html':
+                case '/round-robin':
                     let quantum = Number(document.getElementById('quantum').value);
                     if(quantum < 1) return;
                     secuencia = roundRobin(procesos, quantum);
                     tiempoApropiativo(procesos, secuencia);
                     break;
-                case '/srtf.html':
+                case '/srtf':
                     secuencia = srtf(procesos);
                     tiempoApropiativo(procesos, secuencia);
                     break;
